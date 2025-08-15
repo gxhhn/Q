@@ -64,6 +64,7 @@ local about = UITab2:section("『公告』",true)
 
 about:Label("感谢支持Y脚本的人")
 about:Label("已修复完bug")
+about:Label("有问题反馈到群")
 
 local UITab4 = win:Tab("『加入服务器』",'16060333448')
 
@@ -123,6 +124,42 @@ local about = UITab5:section("『复制』",false)
 
     about:Button("点我复制Y脚本交流主群",function()
     setclipboard("794818500")
+end)
+
+local UITab6 = win:Tab("『人物』",'16060333448')
+
+local about = UITab6:section("『人物』",false)
+
+credits:Slider('修改速度', 'WalkspeedSlider', 16, 16, 99999,false, function(Value)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+end)
+
+    credits:Slider('修改跳跃', 'JumpPowerSlider', 50, 50, 99999,false, function(Value)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+end)
+
+    credits:Slider('修改重力', 'GravitySlider', 198, 198, 99999,false,function(Value)
+    game.Workspace.Gravity = Value
+end)
+
+    credits:Slider('修改高度', 'Slider', 2, 2, 9999,false, function(Value)
+    game.Players.LocalPlayer.Character.Humanoid.HipHeight = Value
+end)
+
+    credits:Slider('相机焦距上限', 'ZOOOOOM OUT!',  128, 128, 200000,false, function(Value)
+    game:GetService("Players").LocalPlayer.CameraMaxZoomDistance = Value
+end)
+
+    credits:Slider('相机焦距【正常为70】', 'Sliderflag', 70, 0.1, 250, false, function(v)
+        game.Workspace.CurrentCamera.FieldOfView = v
+end)
+
+    credits:Slider('健康值上限', 'Sliderflag',  120, 120, 999999,false, function(Value)
+    game.Players.LocalPlayer.Character.Humanoid.MaxHealth = Value
+end)
+
+    credits:Slider('玩家健康值', 'Sliderflag',  120, 120, 999999,false, function(Value)
+    game.Players.LocalPlayer.Character.Humanoid.Health = Value
 end)
 
 local UITab6 = win:Tab("『通用』",'16060333448')
